@@ -1,0 +1,11 @@
+VERSION             "1"
+CONFIG              "C:\projects\cod\t5\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE       "ZOMBIE_FTG_CAPS"
+LANG_ENGLISH    "FTG"
+
+REFERENCE       "ZOMBIE_FTG_DESC_CAPS"
+LANG_ENGLISH    "A remake of Inferno Maarten's WAW first room custom map"
+
+ENDMARKER

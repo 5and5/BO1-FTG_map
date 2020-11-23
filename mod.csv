@@ -21,10 +21,13 @@ character,c_usa_dempsey_zt
 rawfile,maps/zombie_ftg_r.gsc
 rawfile,maps/_zombiemode.gsc
 
+//MATERIALS
+material,preview_zombie_apment
+
 //WEAPONS
 weapon,sp/frag_grenade_zm
 
-//XMODEL
-xmodel,viewmodel_ger_nebelhandgrenate
-xmodel,weapon_ger_nebelhandgrenate
-xmodel,german_grenade_bag
+//MAP STUFF
+stringtable,maps\mapsTable.csv
+rawfile,mod.arena
+localize,mod
