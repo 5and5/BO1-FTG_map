@@ -5113,7 +5113,10 @@ end_game()
 		game_over[i].fontScale = 3;
 		game_over[i].alpha = 0;
 		game_over[i].color = ( 1.0, 1.0, 1.0 );
-		game_over[i] SetText( &"ZOMBIE_GAME_OVER" );
+		if(level.round_number < 40)
+			game_over[i] SetText( "No 40 No GG" );
+		else
+			game_over[i] SetText( &"ZOMBIE_GAME_OVER" );
 
 		game_over[i] FadeOverTime( 1 );
 		game_over[i].alpha = 1;
@@ -5160,8 +5163,11 @@ end_game()
 			}
 		}
 		else
-		{
-			survived[i] SetText( &"ZOMBIE_SURVIVED_ROUNDS", level.round_number );
+		{	
+			if(level.round_number < 40)
+				survived[i] SetText( "You baaad, only ", level.round_number );
+			else
+				survived[i] SetText( &"ZOMBIE_SURVIVED_ROUNDS", level.round_number );
 		}
 
 		survived[i] FadeOverTime( 1 );
