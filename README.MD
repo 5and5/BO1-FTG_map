@@ -21,6 +21,15 @@
 
 ## General
 * Round 10 start
+* Only one revive in solo
+
+
+## TODO
+-normal nades (prefab maybe) or nerf them
+-remove shotgun or make wall bigger and add m1 grand
+-texture outside walls
+-move boards back
+
 
 
 
