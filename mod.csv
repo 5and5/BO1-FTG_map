@@ -27,6 +27,7 @@ material,preview_zombie_apment
 
 //WEAPONS
 weapon,sp/frag_grenade_zm
+weapon,sp/m14_zm
 
 //MAP STUFF
 stringtable,maps\mapsTable.csv

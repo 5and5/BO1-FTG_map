@@ -25,10 +25,13 @@
 
 
 ## TODO
--normal nades (prefab maybe) or nerf them
--remove shotgun or make wall bigger and add m1 grand
--texture outside walls
--move boards back
+-add m1 grand make full auto
+-fix thincness 
+-remove quotes
+-look at pathnodes (fix one)
+-replace jump out scripts with waw/bo2
+-Add small slit next to the back-middle window (big enough to throw nades through it, maybe check waw for reference).
+-Make round intermission almost instant (2 seconds)
 
 
 

@@ -3904,11 +3904,27 @@ chalk_round_over()
 }
 
 round_think()
-{
-	level.round_number = 10; //5555
-	level.zombie_vars["zombie_spawn_delay"] = 1.2605; // round 10 spawn rate
+{	
+	players = get_players();
+
+	if(players.size <= 2)
+	{
+		level.round_number = 10;
+		level.zombie_vars["zombie_spawn_delay"] = 1.2605; // round 10 spawn rate
+	}
+	else if(players.size == 3)
+	{
+		level.round_number = 15;
+		level.zombie_vars["zombie_spawn_delay"] = 0.976; // round 15 spawn rate
+	}
+	else if(players.size == 4)
+	{
+		level.round_number = 20;
+		level.zombie_vars["zombie_spawn_delay"] = 0.755; // round 20 spawn rate
+	}
 	level.zombie_move_speed = 105; // running speed
-	level.first_round = false;
+	level.first_round = false; // force first round to have the proper amount of zombies
+
 
 	for( ;; )
 	{
@@ -5116,7 +5132,7 @@ end_game()
 		if(level.round_number < 40)
 			game_over[i] SetText( "No 40 No GG" );
 		else
-			game_over[i] SetText( &"ZOMBIE_GAME_OVER" );
+			game_over[i] SetText( "GG" );
 
 		game_over[i] FadeOverTime( 1 );
 		game_over[i].alpha = 1;
