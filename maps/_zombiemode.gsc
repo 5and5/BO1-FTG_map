@@ -186,6 +186,8 @@ main()
 	#/
 
 	level thread maps\_zombiemode_ffotd::main_end();
+
+	level thread disable_player_quotes();
 }
 
 post_all_players_connected()
@@ -6626,4 +6628,13 @@ spawn_nades_wallbuy()
     trigger = Spawn( "trigger_radius_use", model.origin, 20, 20, 20 );
     trigger.targetname = "weapon_upgrade";
     trigger.zombie_weapon_upgrade = "stielhandgranate";
+}
+
+disable_player_quotes()
+{
+	while(1)
+	{
+		level.player_is_speaking = 1;
+		wait 0.1;
+	}
 }

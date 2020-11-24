@@ -1422,7 +1422,7 @@ solo_revive_buy_trigger_move( revive_trigger_noteworthy )
 
 	revive_perk_trigger trigger_off();
 
-	if( level.solo_lives_given >= 3 )
+	if( level.solo_lives_given >= 1 )
 	{
 		if(IsDefined(level._solo_revive_machine_expire_func))
 		{
