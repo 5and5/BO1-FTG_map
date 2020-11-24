@@ -21,7 +21,7 @@ character,c_usa_dempsey_zt
 rawfile,maps/zombie_ftg_r.gsc
 rawfile,maps/_zombiemode.gsc
 rawfile,maps/_zombiemode_perks.gsc
-rawfile,maps/_zombiemode_spawners.gsc
+rawfile,maps/_zombiemode_spawner.gsc
 
 //MATERIALS
 material,preview_zombie_apment

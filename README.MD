@@ -27,14 +27,9 @@
 
 
 ## TODO
--add m1 grand prefab
--fix thickness on new spawn wall
--look at pathnodes (fix one)
--vision set
 -replace jump out scripts with waw/bo2
 -change preview image
--Add small slit next to the back-middle window (big enough to throw nades through it, maybe check waw for reference).
--Make round intermission almost instant (2 seconds)
+-port m1grand/carbine
 
 
 
