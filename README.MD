@@ -2,7 +2,7 @@
 
 ## Download
 
-[Download](https://www.mediafire.com/file/hjui1jksl4r3jyt/zombie_ftg_6_test.zip/file)
+[Download](https://www.mediafire.com/file/l5f1m7jofqvctp6/BO1-FTG.zip/file)
 
 
 ## Created by: 5and5
@@ -23,13 +23,15 @@
 * Round 10 start in solo or 2p
 * Round 15 start in 3p
 * Round 20 start in 4p
+
+### Weapons
+* Super fast nades
+* Automatic m14
+
+## Perks
 * Only one revive in solo
 
 
-## TODO
--replace jump out scripts with waw/bo2
--change preview image
--port m1grand/carbine
 
 
 
