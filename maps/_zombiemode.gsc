@@ -1606,9 +1606,6 @@ onPlayerSpawned()
 	{
 		self waittill( "spawned_player" );
 
-		// debugg
-		iPrintLn("player spawned");
-
 		self freezecontrols( false );
 
 		self init_player_offhand_weapons();
@@ -2842,8 +2839,6 @@ spectator_respawn()
 
 	if( IsDefined( new_origin ) )
 	{	
-		// debugg
-		iPrintLn("new origins");
 		self Spawn( new_origin, angles );
 	}
 	else
@@ -2946,21 +2941,11 @@ spectator_respawn()
 
 	self thread player_zombie_breadcrumb();
 
-	self thread give_pistol();
-
-
 
 	return true;
 }
 
-thread give_pistol()
-{	
-	// debugg
-	wait(2);
-	// manual give pistol
-	iprintln("give pistol");
-	self giveWeapon("m1911_zm");
-}
+
 
 check_for_valid_spawn_near_team( revivee )
 {
