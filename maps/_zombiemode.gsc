@@ -243,6 +243,8 @@ post_all_players_connected()
 	{
 		level.music_override = false;
 	}
+
+	level thread timer_hud();
 }
 
 zombiemode_melee_miss()
@@ -1559,9 +1561,14 @@ onPlayerConnect_clientDvars()
 
 	self setClientDvar( "aim_lockon_pitch_strength", 0.0 );
 
-	if(!level.wii)
+
+	if(getDvarInt("hud_timer") == 1)
 	{
-		//self SetClientDvar("r_enablePlayerShadow", 1);
+		self setClientDvar("hud_timer", 1);
+	}
+	else
+	{
+		self setClientDvar("hud_timer", 0);
 	}
 }
 
@@ -6634,5 +6641,61 @@ disable_player_quotes()
 	{
 		level.player_is_speaking = 1;
 		wait 0.1;
+	}
+}
+
+timer_hud()
+{
+	self endon("disconnect");
+	self endon("end_game");
+
+	flag_wait( "all_players_spawned" );
+	wait 3.15;
+
+	timer = NewHudElem();
+	timer.horzAlign = "right";
+	timer.vertAlign = "top";
+	timer.alignX = "right";
+	timer.alignY = "top";
+	timer.y += 2;
+	timer.x -= 5;
+	timer.foreground = true;
+	timer.fontScale = 1.4;
+	timer.alpha = 0;
+	timer.color = ( 1.0, 1.0, 1.0 );
+	timer SetTimerUp(0);
+
+	start_time = int(getTime() / 1000);
+	thread display_end_time(timer);
+
+	while(1)
+	{
+		if(getDvarInt( "hud_timer" ) == 0)
+		{
+			if(timer.alpha != 0)
+				timer.alpha = 0;
+		}
+		else
+		{
+			if(timer.alpha != 1)
+				timer.alpha = 1;
+		}
+		wait 0.1;
+	}
+}
+
+display_end_time(timer)
+{	
+	start_time = int(getTime() / 1000);
+
+	level waittill( "end_game" );
+	timer.alpha = 1;
+	current_time = int(getTime() / 1000);
+	total_time = current_time - start_time;
+
+	while (1) 
+	{	
+		timer setTimer(total_time - 0.1);
+		wait 0.5;
 	}
 }
