@@ -1606,6 +1606,9 @@ onPlayerSpawned()
 	{
 		self waittill( "spawned_player" );
 
+		// debugg
+		iPrintLn("player spawned");
+
 		self freezecontrols( false );
 
 		self init_player_offhand_weapons();
@@ -1635,15 +1638,15 @@ onPlayerSpawned()
 		self.num_perks = 0;
 		self.on_lander_last_stand = undefined;
 
-		if ( is_true( level.player_out_of_playable_area_monitor ) )
-		{
-			self thread player_out_of_playable_area_monitor();
-		}
+		// if ( is_true( level.player_out_of_playable_area_monitor ) )
+		// {
+		// 	self thread player_out_of_playable_area_monitor();
+		// }
 
-		if ( is_true( level.player_too_many_weapons_monitor ) )
-		{
-			self thread [[level.player_too_many_weapons_monitor_func]]();
-		}
+		// if ( is_true( level.player_too_many_weapons_monitor ) )
+		// {
+		// 	self thread [[level.player_too_many_weapons_monitor_func]]();
+		// }
 
 		if( isdefined( self.initialized ) )
 		{
@@ -1682,11 +1685,6 @@ onPlayerSpawned()
 				self thread player_monitor_travel_dist();
 
 				self thread player_grenade_watcher();
-
-
-				// custom
-				//self thread get_position();
-				//spawn_nades_wallbuy();
 			}
 		}
 	}
@@ -2825,14 +2823,13 @@ spectator_respawn()
 	println( "*************************Respawn Spectator***" );
 	assert( IsDefined( self.spectator_respawn ) );
 
-	origin = self.spectator_respawn;
-	angles = (0, 0, 0);
+	origin = self.spectator_respawn.origin;
+	angles = self.spectator_respawn.angles;
 
 	self setSpectatePermissions( false );
-	self Spawn( origin, angles );
-
-/*	new_origin = undefined;
-
+								
+	new_origin = undefined;
+	
 	if ( isdefined( level.check_valid_spawn_override ) )
 	{
 		new_origin = [[ level.check_valid_spawn_override ]]( self );
@@ -2844,12 +2841,15 @@ spectator_respawn()
 	}
 
 	if( IsDefined( new_origin ) )
-	{
+	{	
+		// debugg
+		iPrintLn("new origins");
 		self Spawn( new_origin, angles );
 	}
 	else
-	{*/
-//	}
+	{
+		self Spawn( origin, angles );
+	}
 
 
 /*	we are not currently supporting the shared screen tech
@@ -2946,7 +2946,20 @@ spectator_respawn()
 
 	self thread player_zombie_breadcrumb();
 
+	self thread give_pistol();
+
+
+
 	return true;
+}
+
+thread give_pistol()
+{	
+	// debugg
+	wait(2);
+	// manual give pistol
+	iprintln("give pistol");
+	self giveWeapon("m1911_zm");
 }
 
 check_for_valid_spawn_near_team( revivee )

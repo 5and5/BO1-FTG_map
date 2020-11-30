@@ -32,6 +32,16 @@
 * Only one revive in solo
 
 
+## Version 1.1
+* fixed playable area (drops)
+* fixed board ghosting
+* fixed players coming back without a pistol
+* fixed players having more than 4 grenades
+* Retextured walls
+* Increased nades buy trigger
+* Removed delay before zombies jump out of windows
+
+
 
 
 

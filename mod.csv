@@ -22,6 +22,8 @@ rawfile,maps/zombie_ftg_r.gsc
 rawfile,maps/_zombiemode.gsc
 rawfile,maps/_zombiemode_perks.gsc
 rawfile,maps/_zombiemode_spawner.gsc
+rawfile,maps/_zombiemode_weapons.gsc
+rawfile,maps/_loadout.gsc
 
 //MATERIALS
 material,preview_zombie_apment
@@ -29,6 +31,7 @@ material,preview_zombie_apment
 //WEAPONS
 weapon,sp/frag_grenade_zm
 weapon,sp/m14_zm
+weaponssp/stielhandgranate
 
 //MAP STUFF
 stringtable,maps\mapsTable.csv
