@@ -33,6 +33,11 @@ weapon,sp/frag_grenade_zm
 weapon,sp/m14_zm
 weaponssp/stielhandgranate
 
+//MENU
+menufile,ui/objective_info.menu
+menufile,ui/options_game_pc.menu
+menufile,ui/hud_zombie.menu
+
 //MAP STUFF
 stringtable,maps\mapsTable.csv
 rawfile,mod.arena
