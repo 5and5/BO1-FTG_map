@@ -21,7 +21,9 @@
 
 ### Menu
 * Timer
-* FOVs
+* FOV
+* FOV scale
+* Max fps
 
 ### Round start
 * Round 10 for solo or 2p
@@ -34,20 +36,26 @@
 
 ### Zombies
 * Jump out of windows quicker
+* more agressive behind windows
 
 ## Perks
 * Only one revive in solo
 
 
 ## Version 1.1
-* fixed playable area (drops fixed)
-* fixed players coming back without a pistol
-* fixed visual glitch caused by boards
-* fixed players having more than 4 grenades
-* Retextured walls
-* Increased nades buy trigger
-* Removed delay before zombies jump out of windows
-* Added timer in menu options
+* Fixed playable area (drops fix)
+* Fixed players coming back without a pistol
+* Fixed boards visual glitch
+* Fixed players having more than 4 grenades
+* Fixed players being able to buy grenades while having 4
+* Changed wall textures
+* Changed grenades buy trigger to be larger
+* Changed delay before zombies jump out of windows to be faster
+* Changed olympia wall buy location
+* Changed default fov back to 65
+* Added a timer in game menu options
+* Added FOV in game menu options
+* Added max fps in game menu options
 
 
 ## Config Settings
