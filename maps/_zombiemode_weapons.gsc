@@ -1234,7 +1234,7 @@ treasure_chest_think()
 					self notify( "user_grabbed_weapon" );
 					user thread treasure_chest_give_weapon( self.chest_origin.weapon_string );
 
-					//fix grenade ammo
+					//fix for grenade ammo
 					if(is_lethal_grenade(self.chest_origin.weapon_string) && user GetWeaponAmmoClip(self.chest_origin.weapon_string) > 4)
 					{
 						user SetWeaponAmmoClip(self.chest_origin.weapon_string, 4);
@@ -1372,6 +1372,7 @@ decide_hide_show_hint( endon_notify )
 		use_choke = true;
 	}
 
+	dist = 256 * 256;
 
 	while( true )
 	{
@@ -1389,11 +1390,44 @@ decide_hide_show_hint( endon_notify )
 				self SetVisibleToPlayer( self.chest_user );
 			}
 		}
+		// fix for grenade ammo
+		else if(is_lethal_grenade(self.zombie_weapon_upgrade) || is_tactical_grenade(self.zombie_weapon_upgrade))
+		{	
+			
+			players = get_players();
+			for( i = 0; i < players.size; i++ )
+			{	
+				if(DistanceSquared( players[i].origin, self.origin ) < dist)
+				{
+					player_ammo = players[i] GetWeaponAmmoStock(self.zombie_weapon_upgrade);
+					max_ammo = undefined;
+
+					if(is_lethal_grenade(self.zombie_weapon_upgrade))
+					{
+						max_ammo = 4;
+					}
+					else if(is_tactical_grenade(self.zombie_weapon_upgrade))
+					{
+						max_ammo = 3;
+					}
+
+					if( players[i] can_buy_weapon() && player_ammo < max_ammo)
+					{	
+						self SetInvisibleToPlayer( players[i], false );
+					}
+					else
+					{	
+						self SetInvisibleToPlayer( players[i], true );
+					}
+				}
+			}
+			
+		}
 		else // all players
 		{	
 			players = get_players();
 			for( i = 0; i < players.size; i++ )
-			{
+			{	
 				if( players[i] can_buy_weapon())
 				{
 					self SetInvisibleToPlayer( players[i], false );
@@ -1403,7 +1437,7 @@ decide_hide_show_hint( endon_notify )
 					self SetInvisibleToPlayer( players[i], true );
 				}
 			}
-		}	
+		}
 		
 		if(use_choke)
 		{
@@ -2979,7 +3013,7 @@ weapon_give( weapon, is_upgrade )
 	 
 	self play_weapon_vo(weapon);
 
-	//fix grenade ammo
+	//fix for grenade ammo
 	if(is_lethal_grenade(weapon) && self GetWeaponAmmoClip(weapon) > 4)
 	{
 		self SetWeaponAmmoClip(weapon, 4);
@@ -3114,10 +3148,22 @@ ammo_give( weapon )
 	{
 		self play_sound_on_ent( "purchase" ); 
 		self GiveStartAmmo( weapon );
-// 		if( also_has_upgrade )
-// 		{
-// 			self GiveMaxAmmo( weapon+"_upgraded" );
-// 		}
+
+		// fix for grenade ammo
+		if(is_lethal_grenade(weapon) || is_tactical_grenade(weapon))
+		{
+			ammo = 0;
+			if(is_lethal_grenade(weapon))
+			{
+				ammo = 4;
+			}
+			else if(is_tactical_grenade(weapon))
+			{
+				ammo = 3;
+			}
+
+			self SetWeaponAmmoClip(weapon, ammo);
+		}
 		return true;
 	}
 

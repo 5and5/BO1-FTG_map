@@ -50,6 +50,13 @@
 * Added timer in menu options
 
 
+## Config Settings
+* seta cg_fov_enable "1"
+* seta cg_fovScale_settings "1.2"
+* seta cg_fov_settings "75"
+* seta hud_timer "1"
+
+
 
 
 

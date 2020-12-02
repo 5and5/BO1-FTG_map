@@ -1546,7 +1546,7 @@ onPlayerConnect_clientDvars()
 		"compass", "0",
 		"hud_showStance", "0",
 		"cg_thirdPerson", "0",
-		"cg_fov", "75",
+		"cg_fov", "65",
 		"cg_thirdPersonAngle", "0",
 		"ammoCounterHide", "1",
 		"miniscoreboardhide", "1",
@@ -1555,31 +1555,14 @@ onPlayerConnect_clientDvars()
 		"playerPushAmount", "1" );
 
 	self SetDepthOfField( 0, 0, 512, 4000, 4, 0 );
-
-	// Enabling the FPS counter in ship for now
-	//self setclientdvar( "cg_drawfps", "1" );
-
 	self setClientDvar( "aim_lockon_pitch_strength", 0.0 );
 
+	// no cheats
+	self SetClientDvar("sv_cheats", 0);
 
-	if(getDvarInt("hud_timer") == 1)
-	{
-		self setClientDvar("hud_timer", 1);
-	}
-	else
-	{
-		self setClientDvar("hud_timer", 0);
-	}
+	// allows shooting while looking at players
+	self SetClientDvar("g_friendlyFireDist", 0);
 
-	if(getDvarInt("cg_fovScale_settings") == 0)
-	{
-		self setClientDvar("cg_fovScale_settings", 1);
-	}
-
-	if(getDvarInt("cg_fov_settings") == 0)
-	{
-		self setClientDvar("cg_fov_settings", 75);
-	}
 }
 
 
