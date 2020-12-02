@@ -19,27 +19,35 @@
 
 [YouTube](https://www.youtube.com/channel/UCKYhFPeuiF2qR7AkySWNmfA)
 
-## General
-* Round 10 start in solo or 2p
-* Round 15 start in 3p
-* Round 20 start in 4p
+### Menu
+* Timer
+* FOVs
+
+### Round start
+* Round 10 for solo or 2p
+* Round 15 for 3p
+* Round 20 for 4p
 
 ### Weapons
 * Super fast nades
 * Automatic m14
+
+### Zombies
+* Jump out of windows quicker
 
 ## Perks
 * Only one revive in solo
 
 
 ## Version 1.1
-* fixed playable area (drops)
-* fixed board ghosting
+* fixed playable area (drops fixed)
 * fixed players coming back without a pistol
+* fixed visual glitch caused by boards
 * fixed players having more than 4 grenades
 * Retextured walls
 * Increased nades buy trigger
 * Removed delay before zombies jump out of windows
+* Added timer in menu options
 
 
 

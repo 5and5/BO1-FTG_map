@@ -25,8 +25,8 @@ rawfile,maps/_zombiemode_spawner.gsc
 rawfile,maps/_zombiemode_weapons.gsc
 rawfile,maps/_loadout.gsc
 
-//MATERIALS
-material,preview_zombie_apment
+//CLIENTSCRIPTS
+rawfile,clientscripts/_zombiemode_ffotd.csc
 
 //WEAPONS
 weapon,sp/frag_grenade_zm
@@ -42,3 +42,4 @@ menufile,ui/hud_zombie.menu
 stringtable,maps\mapsTable.csv
 rawfile,mod.arena
 localize,mod
+material,preview_zombie_apment
