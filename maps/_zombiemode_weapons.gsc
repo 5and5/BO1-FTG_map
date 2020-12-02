@@ -1415,7 +1415,7 @@ decide_hide_show_hint( endon_notify )
 		else
 		{
 			wait(0.1);
-		}		
+		}	
 		
 		level._weapon_show_hint_choke ++;
 	}

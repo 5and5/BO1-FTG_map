@@ -1570,6 +1570,16 @@ onPlayerConnect_clientDvars()
 	{
 		self setClientDvar("hud_timer", 0);
 	}
+
+	if(getDvarInt("cg_fovScale_settings") == 0)
+	{
+		self setClientDvar("cg_fovScale_settings", 1);
+	}
+
+	if(getDvarInt("cg_fov_settings") == 0)
+	{
+		self setClientDvar("cg_fov_settings", 75);
+	}
 }
 
 
